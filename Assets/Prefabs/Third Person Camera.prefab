@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5532386334908348069}
   - component: {fileID: 5532386334908348066}
-  - component: {fileID: 5124039600321605141}
+  - component: {fileID: 3513959643732569440}
   m_Layer: 0
   m_Name: Third Person Camera
   m_TagString: MainCamera
@@ -57,7 +57,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 70
+  field of view: 60
   orthographic: 0
   orthographic size: 2.29
   m_Depth: -1
@@ -75,7 +75,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &5124039600321605141
+--- !u!114 &3513959643732569440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,9 +84,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5532386334908348064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29760e095f007486281ebf9c1ee61f62, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cd393fd6481fe048818ddaac526ee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  smoothSpeed: 0.125
-  offset: {x: 0, y: 4.55, z: -7.59}
