@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     }
     Rigidbody rigidBody;
     BoxCollider playerCollider, dashCollider, ultCollider;
-
+    public Transform mainCamera;
     XInputDotNetPure.PlayerIndex PlayerIndex = XInputDotNetPure.PlayerIndex.One;
     public enum PlayerStates { IDLING, MOVING, DASHING };
     public enum UltType {NONE, FIRE, ICE, WIND };
@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     public float fireAmount = 0;
     public float iceAmount = 0;
     public float windAmount = 0;
+    
 
     public bool isUltra;
     public int reviveTimes;
@@ -69,7 +70,7 @@ public class Player : MonoBehaviour
     float moreChargeNumber;
     float DashHealNumber;
     float DashChargeNumber;
-
+    float cameraRotationY;
     
 
     // Start is called before the first frame update
@@ -122,6 +123,11 @@ public class Player : MonoBehaviour
     public void addKillCount()
     {
         killCount++;
+    }
+
+    public void changeCameraY(float y)
+    {
+        cameraRotationY = y;
     }
 
     float get_angle(float x, float y)
@@ -284,9 +290,11 @@ public class Player : MonoBehaviour
         if (Mathf.Abs(Input.GetAxis("Horizontal_L")) > 0.19f || Mathf.Abs(Input.GetAxis("Vertical_L")) > 0.19f)
         {
             float x = Input.GetAxis("Horizontal_L"), y = Input.GetAxis("Vertical_L");
-
-            float angle = get_angle(x, y), currentAngle = (transform.localEulerAngles.y % 360 + 360) % 360; ;
-            transform.Rotate(Vector3.up, angle - currentAngle);
+            transform.Rotate(Vector3.up, cameraRotationY -(transform.localEulerAngles.y % 360 + 360) % 360);
+            float angle = get_angle(x, y), currentAngle = (transform.localEulerAngles.y % 360 + 360) % 360;
+            transform.Rotate(Vector3.up,angle- currentAngle);
+            Debug.Log("camera:"+cameraRotationY);
+            Debug.Log("character:"+currentAngle);
             //rigidBody.AddForce(transform.forward * moveSpeed);
             state = PlayerStates.MOVING;
             rigidBody.MovePosition(transform.position + transform.forward * moveSpeed * Time.fixedDeltaTime);

@@ -5,23 +5,23 @@ using UnityEngine;
 public class ThirdPersonCameraFollow : MonoBehaviour
 {
     //Determines the limitations of vertical camera movement
-    private const float Y_ANGLE_MIN = 15.0f;
-    private const float Y_ANGLE_MAX = 25.0f;
+    [SerializeField] private float Y_ANGLE_MIN = 15.0f;
+    [SerializeField] private float Y_ANGLE_MAX = 25.0f;
 
     public Transform character; //What the camera is looking at..the main character
 
-    private float distance = -5.0f; // Distance to stay from character, Make sure it is negative
+    [SerializeField] private float distance = -5.0f; // Distance to stay from character, Make sure it is negative
+    [SerializeField] private float offsetY = 2.5f;
     private float currentX = 0.0f; // Holds value of X mouse movement
     private float currentY = 0.0f; // Holds value of Y mouse movement
-
     void start() { }
 
     void Update()
     {
-        if (Input.GetAxis("Mouse X") != null || Input.GetAxis("Mouse Y") != null)
+        if (Mathf.Abs(Input.GetAxis("Horizontal_R")) > 0.19f || Mathf.Abs(Input.GetAxis("Vertical_R")) > 0.19f)
         {
-            currentX += Input.GetAxis("Mouse X");
-            currentY += Input.GetAxis("Mouse Y");
+            currentX += Input.GetAxis("Horizontal_R");
+            currentY += Input.GetAxis("Vertical_R");
         }
 
         currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
@@ -29,7 +29,8 @@ public class ThirdPersonCameraFollow : MonoBehaviour
 
     void LateUpdate()
     {                                                        //Rotation around character............/...Keeps distance from character          
-        gameObject.transform.position = character.position + Quaternion.Euler(currentY, currentX, 0) * new Vector3(0, 0, distance);
-        gameObject.transform.LookAt(character.position);//Points camera at character
+        gameObject.transform.position = character.position + Quaternion.Euler(currentY+10f, currentX , 0) * new Vector3(0, 0, distance);
+        gameObject.transform.LookAt(character.position + new Vector3(0, offsetY, 0));//Points camera at character
+        character.gameObject.GetComponent<Player>().changeCameraY(gameObject.transform.localEulerAngles.y);
     }
 }

@@ -87,3 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd393fd6481fe048818ddaac526ee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Y_ANGLE_MIN: 15
+  Y_ANGLE_MAX: 25
+  character: {fileID: 0}
+  distance: -8
+  offsetY: 3
