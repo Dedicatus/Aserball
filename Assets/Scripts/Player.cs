@@ -290,11 +290,12 @@ public class Player : MonoBehaviour
         if (Mathf.Abs(Input.GetAxis("Horizontal_L")) > 0.19f || Mathf.Abs(Input.GetAxis("Vertical_L")) > 0.19f)
         {
             float x = Input.GetAxis("Horizontal_L"), y = Input.GetAxis("Vertical_L");
-            transform.Rotate(Vector3.up, cameraRotationY -(transform.localEulerAngles.y % 360 + 360) % 360);
+            transform.eulerAngles = new Vector3(0, cameraRotationY, 0);
             float angle = get_angle(x, y), currentAngle = (transform.localEulerAngles.y % 360 + 360) % 360;
-            transform.Rotate(Vector3.up,angle- currentAngle);
+            transform.eulerAngles = new Vector3(0, angle + currentAngle, 0);
+            //transform.Rotate(Vector3.up,angle- currentAngle);
             Debug.Log("camera:"+cameraRotationY);
-            Debug.Log("character:"+currentAngle);
+            Debug.Log("character:"+angle);
             //rigidBody.AddForce(transform.forward * moveSpeed);
             state = PlayerStates.MOVING;
             rigidBody.MovePosition(transform.position + transform.forward * moveSpeed * Time.fixedDeltaTime);
