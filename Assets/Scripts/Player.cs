@@ -294,8 +294,8 @@ public class Player : MonoBehaviour
             float angle = get_angle(x, y), currentAngle = (transform.localEulerAngles.y % 360 + 360) % 360;
             transform.eulerAngles = new Vector3(0, angle + currentAngle, 0);
             //transform.Rotate(Vector3.up,angle- currentAngle);
-            Debug.Log("camera:"+cameraRotationY);
-            Debug.Log("character:"+angle);
+            //Debug.Log("camera:"+cameraRotationY);
+            //Debug.Log("character:"+angle);
             //rigidBody.AddForce(transform.forward * moveSpeed);
             state = PlayerStates.MOVING;
             rigidBody.MovePosition(transform.position + transform.forward * moveSpeed * Time.fixedDeltaTime);
