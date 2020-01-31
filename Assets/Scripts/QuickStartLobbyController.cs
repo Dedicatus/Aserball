@@ -37,12 +37,12 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     {
 		Debug.Log("Creating room now");
 		int randomRoomNumber = Random.Range(0, 10000); //creating a random name for the room
-		RoomOptions roomOps = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlaters = (byte)RoomSize};
+		RoomOptions roomOps = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = (byte)RoomSize};
 		PhotonNetwork.CreateRoom("Room " + randomRoomNumber, roomOps); //attempting to create a new room.
 		Debug.Log(randomRoomNumber);
     }
 
-    public override void OnCreateRoomfailed(short returnCode, string message) //callback funtion for failed room creation.
+    public override void OnCreateRoomFailed(short returnCode, string message) //callback funtion for failed room creation.
     {
     	Debug.Log("Failed to create room... trying again");
     	CreateRoom();

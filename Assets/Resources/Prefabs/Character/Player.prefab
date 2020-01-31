@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 4082285806324716152}
   - component: {fileID: 4082285806324716154}
   - component: {fileID: 469470177}
+  - component: {fileID: 6957062274278294402}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -290,6 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d297a55c810947f5b6e3eae5d3ae741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
   state: 0
   Utype: 0
   windCollider: {fileID: 0}
@@ -324,6 +326,28 @@ MonoBehaviour:
   singleDashCount: 0
   isDashHeal: 0
   isDashCharge: 0
+--- !u!114 &6957062274278294402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082285806324716149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4665505444236312633
 GameObject:
   m_ObjectHideFlags: 0

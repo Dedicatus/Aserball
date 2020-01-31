@@ -22,7 +22,7 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks
     	StartGame();
     }
 
-    private voif StartGame() //Function for loading into the multiplayer scene.
+    private void StartGame() //Function for loading into the multiplayer scene.
     {
     	if (PhotonNetwork.IsMasterClient)
     	{

@@ -14,10 +14,18 @@ public class ThirdPersonCameraFollow : MonoBehaviour
     [SerializeField] private float offsetY = 2.5f;
     private float currentX = 0.0f; // Holds value of X mouse movement
     private float currentY = 0.0f; // Holds value of Y mouse movement
-    void start() { }
+    void start()
+    {
+        character = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update()
     {
+        if (character == null)
+        {
+            character = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         if (Mathf.Abs(Input.GetAxis("Horizontal_R")) > 0.19f || Mathf.Abs(Input.GetAxis("Vertical_R")) > 0.19f)
         {
             currentX += Input.GetAxis("Horizontal_R");
