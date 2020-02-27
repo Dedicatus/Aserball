@@ -866,6 +866,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3513959643732569440, guid: 9e46c0918eddba24f85528eb37279b25,
+        type: 3}
+      propertyPath: xRotationSpeed
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513959643732569440, guid: 9e46c0918eddba24f85528eb37279b25,
+        type: 3}
+      propertyPath: yRotationSpeed
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 5532386334908348064, guid: 9e46c0918eddba24f85528eb37279b25,
         type: 3}
       propertyPath: m_Name

@@ -277,7 +277,7 @@ public class Player : MonoBehaviour
 
             case PlayerStates.DASHING:
                 //playerCollider.enabled = false;
-                
+                dashCollider.enabled = true;
                 dashForward();       
                 break;
 
