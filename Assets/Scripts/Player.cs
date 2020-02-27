@@ -71,7 +71,6 @@ public class Player : MonoBehaviour
     float DashHealNumber;
     float DashChargeNumber;
     float cameraRotationY;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -217,6 +216,7 @@ public class Player : MonoBehaviour
                         isVibrated = false;
                         singleDashCount = 0;
                         state = PlayerStates.DASHING;
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Dash");
                     }
                     ultCollider.enabled = true;
                 }
@@ -235,8 +235,9 @@ public class Player : MonoBehaviour
                         isVibrated = false;
                         singleDashCount = 0;
                         state = PlayerStates.DASHING;
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Dash");
                     }
-                    dashCollider.enabled = true;
+           
                 }
             }
         }
@@ -277,7 +278,7 @@ public class Player : MonoBehaviour
             case PlayerStates.DASHING:
                 //playerCollider.enabled = false;
                 
-                dashForward();
+                dashForward();       
                 break;
 
         }
@@ -344,7 +345,10 @@ public class Player : MonoBehaviour
     private void dashForward()
     {
         if (dashTimer >= dashTime - 0.1f)
+        {
             rigidBody.AddForce(transform.forward * dashForce);
+        }
+            
         else rigidBody.AddForce(transform.forward * 50.0f);
         if (dashTimer <= 0.0f)
         {

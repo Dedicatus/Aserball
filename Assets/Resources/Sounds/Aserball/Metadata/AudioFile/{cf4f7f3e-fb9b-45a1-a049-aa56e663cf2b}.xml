@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{cf4f7f3e-fb9b-45a1-a049-aa56e663cf2b}">
+		<property name="assetPath">
+			<value>456963__funwithsound__failure-drum-sound-effect-2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.4239999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0b8cab1c-4e51-487d-9871-5cb6c6cf8682}</destination>
+		</relationship>
+	</object>
+</objects>

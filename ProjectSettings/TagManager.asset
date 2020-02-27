@@ -8,6 +8,9 @@ TagManager:
   - Dash
   - GameManager
   - System
+  - Ball
+  - LevelController
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{2ecc4eba-707b-4c51-9c2c-f387b6e70878}">
+		<property name="assetPath">
+			<value>Hammering-J_Blow-2014925903.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.9865624999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0b8cab1c-4e51-487d-9871-5cb6c6cf8682}</destination>
+		</relationship>
+	</object>
+</objects>
