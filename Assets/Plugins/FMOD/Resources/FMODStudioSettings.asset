@@ -15,10 +15,10 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/Resources/Sounds/Aserball/Aserball.fspro
-  sourceBankPath: Assets\Resources\Sounds\Aserball\Build
+  sourceProjectPath: Assets/FMOD/Aserball/Aserball.fspro
+  sourceBankPath: Assets\FMOD\Aserball\Build
   SourceBankPathUnformatted: 
-  AutomaticEventLoading: 1
+  AutomaticEventLoading: 0
   BankLoadType: 0
   AutomaticSampleLoading: 0
   EncryptionKey: 
@@ -79,5 +79,6 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks: []
-  BanksToLoad: []
+  BanksToLoad:
+  - 
   LiveUpdatePort: 9264

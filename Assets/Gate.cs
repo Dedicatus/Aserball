@@ -10,9 +10,17 @@ public class Gate : MonoBehaviour
 
     private LevelController levelController;
 
+    [SerializeField] private int myScore;
+
+    FMOD.Studio.EventInstance scoreSound;
+    FMOD.Studio.EventInstance getScoredSound;
+
     private void Start()
     {
         levelController = GameObject.FindWithTag("LevelController").GetComponent<LevelController>();
+        myScore = 0;
+        scoreSound = FMODUnity.RuntimeManager.CreateInstance("event:/Score");
+        getScoredSound = FMODUnity.RuntimeManager.CreateInstance("event:/GetScored");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,10 +31,17 @@ public class Gate : MonoBehaviour
             switch (gateType)
             {
                 case GateType.MyGate:
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Scored");
+                    float reverbTimeScale = ((float)myScore / 3.0f) > 1.0f ? 1.0f : ((float)myScore / 3.0f);
+                    getScoredSound.setParameterByName("ReverbTime", reverbTimeScale);
+                    ++myScore;
+                    getScoredSound.start();
                     break;
                 case GateType.OpponentGate:
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Score");
+                    float pitchScale = ((float)myScore / 5.0f) > 1.0f ? 1.0f : ((float)myScore / 5.0f);
+                    scoreSound.setParameterByName("Pitch", pitchScale);
+                    ++myScore;
+                    ++levelController.score;
+                    scoreSound.start();
                     break;
                 default:
                     break;

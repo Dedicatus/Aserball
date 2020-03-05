@@ -9,9 +9,11 @@ public class LevelController : MonoBehaviour
     [SerializeField] private GameObject ballPrefab;
     private GameObject ball;
     public GameObject myPlayer;
+    public int score;
 
     private void Start()
     {
+        score = 0;
         ball = Instantiate(ballPrefab, ballSpawnPoint.transform.position, Quaternion.identity);
     }
 
@@ -25,4 +27,5 @@ public class LevelController : MonoBehaviour
         myPlayer.GetComponent<Rigidbody>().velocity = Vector3.zero;
         myPlayer.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
+
 }

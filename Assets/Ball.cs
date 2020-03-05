@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    private Player playerScript;
+
+    FMOD.Studio.EventInstance kickBallSound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerScript = GameObject.FindWithTag("Player").GetComponent<Player>();
+        kickBallSound = FMODUnity.RuntimeManager.CreateInstance("event:/KickBall");
     }
 
     // Update is called once per frame
     void Update()
     {
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -24,7 +30,10 @@ public class Ball : MonoBehaviour
                 break;
             case "Player":
                 if (collision.gameObject.GetComponent<Player>().state == Player.PlayerStates.DASHING)
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/KickBall", GetComponent<Transform>().position);
+                {
+                    kickBallSound.setParameterByName("Volume", playerScript.dashScale());
+                    kickBallSound.start();
+                }
                 break;
             default:
                 break;

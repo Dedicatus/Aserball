@@ -7,17 +7,17 @@ public class Player : MonoBehaviour
     public Player()
     {
         state = PlayerStates.IDLING;
-
     }
     Rigidbody rigidBody;
     BoxCollider playerCollider, dashCollider, ultCollider;
     public Transform mainCamera;
     XInputDotNetPure.PlayerIndex PlayerIndex = XInputDotNetPure.PlayerIndex.One;
     public enum PlayerStates { IDLING, MOVING, DASHING };
-    public enum UltType {NONE, FIRE, ICE, WIND };
+    public enum UltType { NONE, FIRE, ICE, WIND };
     public PlayerStates state;
     public UltType Utype;
     public GameObject windCollider;
+    FMOD.Studio.EventInstance dashSound;
 
     [Header("Status")]
     public bool MJMode = false;
@@ -47,7 +47,6 @@ public class Player : MonoBehaviour
     public float fireAmount = 0;
     public float iceAmount = 0;
     public float windAmount = 0;
-    
 
     public bool isUltra;
     public int reviveTimes;
@@ -55,7 +54,7 @@ public class Player : MonoBehaviour
     public float vibrationTime = 0.5f;
     public bool isAddMaxHealth;
     public float dashTimer;
-    
+
     float dashGapCount;
     public float dashCDcount;
     float ultCount;
@@ -94,6 +93,7 @@ public class Player : MonoBehaviour
         isDashCharge = false;
         isMoreChargeCollection = false;
         curHealth = maxHealth;
+        dashSound = FMODUnity.RuntimeManager.CreateInstance("event:/Dash");
     }
 
     // Update is called once per frame
@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
             isVibrated = true;
         }
         vibrationCount -= Time.deltaTime;
-        if(vibrationCount>0)
+        if (vibrationCount > 0)
             XInputDotNetPure.GamePad.SetVibration(PlayerIndex, 0f, 0.8f);
         else XInputDotNetPure.GamePad.SetVibration(PlayerIndex, 0f, 0f);
     }
@@ -165,7 +165,7 @@ public class Player : MonoBehaviour
         if (windAmount >= iceAmount && windAmount >= fireAmount)
         {
             Utype = UltType.WIND;
-            
+
         }
     }
 
@@ -180,7 +180,7 @@ public class Player : MonoBehaviour
     }
 
     public void changeMaxHealth()
-    { 
+    {
         isAddMaxHealth = true;
         maxHealth = 200f;
         curHealth = 200f;
@@ -209,8 +209,8 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space))
                 {
-                    
-                    if ((state == PlayerStates.MOVING)|| (state == PlayerStates.IDLING))
+
+                    if ((state == PlayerStates.MOVING) || (state == PlayerStates.IDLING))
                     {
                         dashTimer = dashTime;
                         isVibrated = false;
@@ -228,7 +228,7 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space))
                 {
-                    
+
                     if ((state == PlayerStates.MOVING) || (state == PlayerStates.IDLING))
                     {
                         dashTimer = dashTime;
@@ -237,12 +237,12 @@ public class Player : MonoBehaviour
                         state = PlayerStates.DASHING;
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Dash");
                     }
-           
+
                 }
             }
         }
 
-        if (((Input.GetKey(KeyCode.JoystickButton8) && Input.GetKey(KeyCode.JoystickButton9)) || Input.GetKey(KeyCode.R)) && ultCharge >= ultCost&&!isUltra)
+        if (((Input.GetKey(KeyCode.JoystickButton8) && Input.GetKey(KeyCode.JoystickButton9)) || Input.GetKey(KeyCode.R)) && ultCharge >= ultCost && !isUltra)
         {
             checkUltType();
             isUltra = true;
@@ -250,7 +250,7 @@ public class Player : MonoBehaviour
             ultCount = ultTime;
         }
 
-        if(Input.GetKey(KeyCode.M))
+        if (Input.GetKey(KeyCode.M))
         {
             MJMode = true;
         }
@@ -278,7 +278,7 @@ public class Player : MonoBehaviour
             case PlayerStates.DASHING:
                 //playerCollider.enabled = false;
                 dashCollider.enabled = true;
-                dashForward();       
+                dashForward();
                 break;
 
         }
@@ -301,7 +301,8 @@ public class Player : MonoBehaviour
             state = PlayerStates.MOVING;
             rigidBody.MovePosition(transform.position + transform.forward * moveSpeed * Time.fixedDeltaTime);
         }
-        else {
+        else
+        {
             state = PlayerStates.IDLING;
 
             //Keyboard
@@ -339,7 +340,7 @@ public class Player : MonoBehaviour
 
         }
 
-        
+
     }
 
     private void dashForward()
@@ -348,7 +349,7 @@ public class Player : MonoBehaviour
         {
             rigidBody.AddForce(transform.forward * dashForce);
         }
-            
+
         else rigidBody.AddForce(transform.forward * 50.0f);
         if (dashTimer <= 0.0f)
         {
@@ -383,12 +384,12 @@ public class Player : MonoBehaviour
     public void addUltCharge(float amount)
     {
         ultCharge += amount;
-        if (ultCharge >= ultCost*3f)
-            ultCharge = ultCost*3f;
+        if (ultCharge >= ultCost * 3f)
+            ultCharge = ultCost * 3f;
         //Debug.Log(UltCharge);
     }
     public void addExtraCharge()
-    { 
+    {
         if (isMoreChargeCollection)
             ultCharge += moreChargeNumber;
     }
@@ -449,7 +450,7 @@ public class Player : MonoBehaviour
     public void getAttacked(float number)
     {
         float tempNum = Random.Range(0f, 1f);
-        if(tempNum<=avoidChance)
+        if (tempNum <= avoidChance)
             curHealth -= number;
         if (MJMode && curHealth < 41)
             curHealth = 41f;
@@ -463,5 +464,10 @@ public class Player : MonoBehaviour
             }
             Destroy(gameObject);
         }
+    }
+
+    public float dashScale()
+    {
+        return dashTimer / dashTime;
     }
 }
