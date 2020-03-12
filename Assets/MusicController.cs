@@ -19,8 +19,12 @@ public class MusicController : MonoBehaviour
     private void Update()
     {
         float reverbHighCutScale = ((float) levelController.score / 3.0f) > 1.0f ? 1.0f : ((float)levelController.score / 3.0f);
-        Debug.Log(reverbHighCutScale);
         bgm.setParameterByName("ReverbHighCut", reverbHighCutScale);
+    }
+
+    public void setDryLevel(float scale)
+    {
+        bgm.setParameterByName("DryLevel", scale);
     }
 
 }

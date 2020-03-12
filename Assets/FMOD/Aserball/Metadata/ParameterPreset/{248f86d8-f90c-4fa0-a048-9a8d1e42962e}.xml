@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{248f86d8-f90c-4fa0-a048-9a8d1e42962e}">
+		<property name="name">
+			<value>DryLevel</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d09a21fc-9226-4cc2-992f-94d9db1df555}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{614e3e93-9dc2-4320-aef3-aaf23678b34b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{614e3e93-9dc2-4320-aef3-aaf23678b34b}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -40,6 +40,41 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-8983979564274943962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Aserball/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637195469135001416
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-8562822464867863201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GetScored/ReverbTime
+  m_EditorClassIdentifier: 
+  Name: ReverbTime
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-8527553112851686902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,6 +92,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-8186805767914732664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/KickBall/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-7943242833409340403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +159,7 @@ MonoBehaviour:
   Path: event:/HitWall
   guid: 8143265571361d43ac46663a12fd4cae
   Banks:
-  - {fileID: -4520123753663418600}
+  - {fileID: -8983979564274943962}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -151,7 +203,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7267096515293785144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +219,7 @@ MonoBehaviour:
   Path: event:/Footsteps
   guid: 992d3cffcb44464c9c203e1686e45699
   Banks:
-  - {fileID: -4520123753663418600}
+  - {fileID: -8983979564274943962}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -261,6 +313,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-6772562266251096783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/ReverbHighCut
+  m_EditorClassIdentifier: 
+  Name: ReverbHighCut
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-6658991030768660214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +383,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-6538538817265862542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Score/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-6298709322623586514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,12 +415,12 @@ MonoBehaviour:
   Path: event:/GetScored
   guid: 221f413fa6f2a44593558dd444a25bf6
   Banks:
-  - {fileID: -4520123753663418600}
+  - {fileID: -8983979564274943962}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -7271861740861513450}
+  - {fileID: -1113188798723519387}
   MinDistance: 0
   MaxDistance: 0
   Length: 2424
@@ -478,12 +564,12 @@ MonoBehaviour:
   Path: event:/Score
   guid: b00206e12f962f45947667cc55adff50
   Banks:
-  - {fileID: -4520123753663418600}
+  - {fileID: -8983979564274943962}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -3483718111835175964}
+  - {fileID: -6538538817265862542}
   MinDistance: 0
   MaxDistance: 0
   Length: 3437
@@ -501,11 +587,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMOD/Aserball/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637190150266320313
+  lastModified: 637195469135071227
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1156
+    Value: 1194
   Exists: 1
 --- !u!114 &-4520123753663418600
 MonoBehaviour:
@@ -524,7 +610,7 @@ MonoBehaviour:
   lastModified: 637190150266263807
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4501747149689725733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,6 +634,41 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 288
+--- !u!114 &-4313027421676383040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Aserball/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637195456046572898
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-4120376418596368662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/DryLevel
+  m_EditorClassIdentifier: 
+  Name: DryLevel
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-4111493545321602687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +705,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-3567834495989921482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Score/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-3483718111835175964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +738,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3467890953285565465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,6 +920,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 195
+--- !u!114 &-2465837201846120204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/ReverbHighCut
+  m_EditorClassIdentifier: 
+  Name: ReverbHighCut
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-2170809251072519516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,6 +991,40 @@ MonoBehaviour:
   m_Name: parameter:/KickBall/Volume
   m_EditorClassIdentifier: 
   Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-1113188798723519387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GetScored/ReverbTime
+  m_EditorClassIdentifier: 
+  Name: ReverbTime
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-723101992164018464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/DryLevel
+  m_EditorClassIdentifier: 
+  Name: DryLevel
   Min: 0
   Max: 1
   Default: 0
@@ -972,7 +1161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4916831286933780248}
-  - {fileID: -4520123753663418600}
+  - {fileID: -8983979564274943962}
   EditorEvents:
   - {fileID: 9167858941724959086}
   - {fileID: 4270306337136717734}
@@ -983,10 +1172,10 @@ MonoBehaviour:
   - {fileID: -6298709322623586514}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -4520123753663418600}
+  - {fileID: -8983979564274943962}
   StringsBanks:
   - {fileID: -4916831286933780248}
-  stringsBankWriteTime: 637190150266320313
+  stringsBankWriteTime: 637195469135071227
   cacheVersion: 3
 --- !u!114 &309938604871362100
 MonoBehaviour:
@@ -1004,7 +1193,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &314761680719197750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,6 +1247,41 @@ MonoBehaviour:
   lastModified: 637177974793858328
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &575523178854309026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Aserball/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637195467418885334
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &590236944403929614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/ReverbHighCut
+  m_EditorClassIdentifier: 
+  Name: ReverbHighCut
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 0
 --- !u!114 &797179057425269188
 MonoBehaviour:
@@ -1367,6 +1591,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &3596720121339210910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/DryLevel
+  m_EditorClassIdentifier: 
+  Name: DryLevel
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &3769188180335565981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1422,6 +1663,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &4211565818113247333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GetScored/ReverbTime
+  m_EditorClassIdentifier: 
+  Name: ReverbTime
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &4270306337136717734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1437,7 +1695,7 @@ MonoBehaviour:
   Path: event:/Dash
   guid: 556025aa6481fa4b99e885c8b0994df3
   Banks:
-  - {fileID: -4520123753663418600}
+  - {fileID: -8983979564274943962}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1486,6 +1744,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3437
+--- !u!114 &5058011701525383240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Score/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &5410246987811600861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,7 +1901,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6243890970850053366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,12 +2007,12 @@ MonoBehaviour:
   Path: event:/KickBall
   guid: a6045ec64c2cd24fb573abc1ace59ae7
   Banks:
-  - {fileID: -4520123753663418600}
+  - {fileID: -8983979564274943962}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 6006669979124874718}
+  - {fileID: -8186805767914732664}
   MinDistance: 0
   MaxDistance: 0
   Length: 639
@@ -1758,6 +2033,23 @@ MonoBehaviour:
   lastModified: 637190095302055215
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &7528965624497913389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/KickBall/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 0
 --- !u!114 &7771136724194740512
 MonoBehaviour:
@@ -1980,6 +2272,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2424
+--- !u!114 &8698322322882048858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/KickBall/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &9069241237213658517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2012,12 +2321,13 @@ MonoBehaviour:
   Path: event:/BGM
   guid: 4351b8c5480a3b42bccac463481bae95
   Banks:
-  - {fileID: -4520123753663418600}
+  - {fileID: -8983979564274943962}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 309938604871362100}
+  - {fileID: 3596720121339210910}
+  - {fileID: -6772562266251096783}
   MinDistance: 0
   MaxDistance: 0
   Length: 230560

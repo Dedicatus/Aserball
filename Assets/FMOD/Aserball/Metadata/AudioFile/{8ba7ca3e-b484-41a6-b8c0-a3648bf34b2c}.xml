@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{8ba7ca3e-b484-41a6-b8c0-a3648bf34b2c}">
+		<property name="assetPath">
+			<value>194752__qubodup__air-wind-whiff-blow.flac</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0566041666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0b8cab1c-4e51-487d-9871-5cb6c6cf8682}</destination>
+		</relationship>
+	</object>
+</objects>
